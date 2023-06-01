@@ -1,0 +1,68 @@
+.file-list {
+  width: 100%;
+  li {
+    padding: 0 4px;
+    height: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 22px;
+    font-size: 14px;
+    color: #3c4658;
+    font-weight: 400;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:hover {
+      color: $blue;
+      background: $gray-7;
+      .icon-success {
+        transform: scale(0);
+      }
+      .is-delete {
+        transform: scale(1);
+      }
+    }
+  }
+}
+.file-name {
+  display: flex;
+  align-items: center;
+  margin: 0 20px 0 0;
+  overflow: hidden;
+  .el-icon {
+    margin-right: 8px;
+  }
+  & > span {
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.file-operate {
+  position: relative;
+  display: flex;
+  align-items: center;
+  .el-icon {
+    cursor: pointer;
+    margin-left: 12px;
+    transition: 0.2s transform ease;
+  }
+  .is-delete {
+    position: absolute;
+    right: 0;
+    transform: scale(0);
+  }
+}
+.blue {
+  color: $blue;
+}
+.green {
+  color: $green;
+}
+.gray-1 {
+  color: $gray-1;
+}

@@ -1,0 +1,104 @@
+.hui-table-pop-win {
+  > div.el-dialog {
+    width: 800px;
+  }
+
+  .el-dialog__header {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+
+    .el-dialog__title {
+      color: #333 !important;
+      font-size: 14px !important;
+    }
+  }
+
+  .el-dialog__body {
+    padding: 20px 30px 50px !important;
+    min-height: 200px;
+    overflow-y: auto;
+
+    .el-form-item {
+      &.last-item {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    .el-form-item__label {
+      color: #333 !important;
+    }
+  }
+
+  .el-dialog__footer {
+    .dialog-footer {
+      .el-button {
+        width: 90px;
+      }
+    }
+  }
+
+  // 取消按钮
+  .el-dialog__headerbtn {
+    font-size: 20px;
+    right: 20px !important;
+    top: 8px !important;
+    color: #666;
+    z-index: 2100;
+  }
+  .icon-display {
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .display-tabs-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .tab-item {
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 10px;
+      width: 33%;
+      text-align: start;
+    }
+
+    .title {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      color: #888;
+      font-size: 14px;
+    }
+
+    .display-items {
+      min-height: 150px;
+      margin-bottom: 10px;
+
+      .display-items-dropable {
+        margin-left: 10px;
+      }
+    }
+
+    .hidden-item {
+      min-height: 150px;
+
+      .hidden-items-list {
+        margin-left: 10px;
+      }
+
+      .fr {
+        float: right;
+        color: #5270e7;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.clearfix::after {
+  content: ' ';
+  clear: both; /*清除浮动*/
+  display: block; /*确保该元素是一个块级元素*/
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}

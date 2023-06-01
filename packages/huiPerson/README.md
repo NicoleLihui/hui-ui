@@ -1,0 +1,45 @@
+# HuiPerson 组件
+
+## 组件用途
+
+> 选择组织或部门下的人员
+
+## 组件使用
+
+### 组件参数说明
+
+| 参数名                | 类型                                                                            | 是否必须 | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --------------------- | ------------------------------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| model-value / v-model | Boolean                                                                         | Y        | 是否展示此弹层                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| departApi             | (params: { userId: string / number }) => Promise<OrganizeType / false>          | Y        | **获取本公司组织**，获取本公司组织的数据的方法，当组件内部调用这个方法的时候，用户可以根据组件给出的请求参数调整与业务后端定义的请求值，并在这个函数中以 promise 的方式返回组织树数据，请求失败用户自行处理，并返回 Promise<false>; interface OrganizeType { pkOrg: NullString, name: NullString, type: TypeName, pkDept?: NullString, orgCode?: NullString, deptCode?: NullString, orgName?: NullString, orgTree?: NullString, pkFatherorg?: string, children?: OrganizeType[] }，其中，type NullString = null / string； type TypeName = '公司' / '部门' / '子公司' |
+| organizApi            | (params: { userId: string / number }) => Promise<OrganizeType / false>          | Y        | **获取本公司及以下组织**，用法及类型定义同上                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| departByOrgIdApi      | (params: { orgId: any }) => Promise<OrganizeType / false>  |  Y  | **根据公司获取部门信息**，用法及类型定义同上                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| slurUserApi           | (params: { currPage: number; userName: string }) => Promise<UserType[] / false> | N        | **根据名字搜索人员信息**，interface UserType { userId: string, userCode: string, userName: string, code?: NullString, organization?: NullString, deptName?: string, job?: string, mobile?: NullString }                                                                                                                                                                                                                                                                                                                                                               |
+| mdmUserByDeptIdApi    | (params: { deptId: any }) => Promise<UserType[] / false>                        | Y        | **根据部门获取人员信息**，用法及类型定义同上                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| selectedData          | Array                                                                           | N        | 用来回显的数据，内部是需要回显的人员对象                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| title                 | String                                                                          | N        | 弹层标题；默认 “选择人员”                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| userId                | String                                                                          | Y        | 当前用户 ID，用来请求当前用户所属组织                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| limit                 | String / Number                                                                 | N        | 限制选人个数，默认不限制选人个数                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| draggable             | Boolean                                                                         | N        | 弹窗启用可拖拽功能织                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+
+### 组件回调方法
+
+| 方法名         | 说明           | 参数                   |
+| -------------- | -------------- | ---------------------- | --- | --- |
+| getCheckedData | 获取选择的数据 | 返回参数为 Array       |
+| close          | 弹层关闭时调用 |                        |
+| <!--           | apiError       | 返回当前访问的接口数据 |     | --> |
+
+### 组件使用案例
+
+```js
+<HuiPerson
+  v-model="visible"
+  :departApi="departApi"
+  :organizApi="organizApi"
+  :slurUserApi="slurUserApi"
+  :departByOrgIdApi="departByOrgIdApi"
+  :mdmUserByDeptIdApi="mdmUserByDeptIdApi"
+  @getCheckedData="getCheckedData"
+/>
+```

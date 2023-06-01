@@ -1,0 +1,121 @@
+{
+  "actionType": "approval",
+  "approvalFormFields": {
+    "approvalRemark": {
+      "name": "approvalRemark",
+      "id": 6,
+      "label": "备注",
+      "$$hashKey": "object:2010",
+      "enabled": true,
+      "required": false
+    },
+    "keepFollow": {
+      "name": "keepFollow",
+      "id": 2,
+      "label": "是否继续跟进",
+      "$$hashKey": "object:2006",
+      "enabled": false,
+      "required": false
+    },
+    "keepFollowCause": {
+      "name": "keepFollowCause",
+      "id": 3,
+      "label": "原因说明",
+      "$$hashKey": "object:2007",
+      "enabled": false,
+      "required": false
+    },
+    "addPersonCommentsReadonly": {
+      "name": "addPersonCommentsReadonly",
+      "id": 12,
+      "label": "加签意见",
+      "$$hashKey": "object:2015",
+      "enabled": false,
+      "required": false
+    },
+    "replyMessage": {
+      "name": "replyMessage",
+      "id": 5,
+      "label": "答复客户建议",
+      "$$hashKey": "object:2009",
+      "enabled": false,
+      "required": false
+    },
+    "approvalAttachment": {
+      "name": "approvalAttachment",
+      "id": 9,
+      "label": "审批附件",
+      "$$hashKey": "object:2013",
+      "enabled": true,
+      "required": false
+    },
+    "approvalMessage": {
+      "name": "approvalMessage",
+      "id": 8,
+      "label": "审批意见",
+      "$$hashKey": "object:2012",
+      "enabled": true,
+      "required": true
+    },
+    "ccUserList": {
+      "name": "ccUserList",
+      "id": 1,
+      "label": "抄送",
+      "$$hashKey": "object:2005",
+      "enabled": true,
+      "required": false
+    },
+    "addPersonComments": {
+      "name": "addPersonComments",
+      "id": 11,
+      "label": "加签意见",
+      "$$hashKey": "object:2014",
+      "enabled": false,
+      "required": false
+    },
+    "pmUserList": {
+      "name": "pmUserList",
+      "id": 4,
+      "label": "选择投资项目经理",
+      "$$hashKey": "object:2008",
+      "enabled": false,
+      "required": false
+    },
+    "projectJudgeResult": {
+      "name": "projectJudgeResult",
+      "id": 7,
+      "label": "项目审批结果",
+      "$$hashKey": "object:2011",
+      "enabled": false,
+      "required": false
+    }
+  },
+  "approvalFormValues": null,
+  "formList": null,
+  "formActionList": [
+    {
+      "category": "Approval",
+      "flag": null,
+      "code": "TG",
+      "name": "通过",
+      "api": "/api/v1/zflow/task/a5b12ca0-ae72-11ed-97c7-0242ac130002/approval"
+    },
+    {
+      "code": "BH",
+      "backStrategy": [
+        {
+          "BACK_START": "退回起点"
+        }
+      ],
+      "api": "/api/v1/zflow/task/a5b12ca0-ae72-11ed-97c7-0242ac130002/back",
+      "flag": "abnormal",
+      "category": "Approval",
+      "confirmTips": "确认驳回王飞申请的bestar-test流程？",
+      "name": "驳回"
+    }
+  ],
+  "formKey": null,
+  "dataModel": null,
+  "isFormModelEditable": "true",
+  "taskId": "a5b12ca0-ae72-11ed-97c7-0242ac130002"
+}

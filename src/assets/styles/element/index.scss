@@ -1,0 +1,103 @@
+/*
+* 只需要重写你需要的改变的element-plus主题变量即可
+* 所有的变量：element-plus/theme-chalk/src/common/var.scss
+*/
+$--colors: (
+  'black': #12171f,
+  'primary': (
+    'base': #1775ff,
+  ),
+  'success': (
+    'base': #52c41a,
+  ),
+  'warning': (
+    'base': #faad14,
+  ),
+  'danger': (
+    'base': #f5222d,
+  ),
+  'error': (
+    'base': #f5222d,
+  ),
+  'info': (
+    'base': #1775ff,
+  ),
+);
+
+$--text-color: (
+  'primary': #12171f,
+  'regular': #12171f,
+  'secondary': #93979d,
+  'placeholder': #c2c6ce,
+  'disabled': #c2c6ce,
+);
+$--bg-color: (
+  'page': #f2f3f5,
+  // 'overlay': #f1f4f9,
+);
+$--border-color: (
+  'base': #dcdfe6,
+);
+$--border-radius: (
+  'base': 2px,
+);
+$--messagebox: (
+  'content-color': #3c4658,
+  'padding': 10px 16px,
+);
+$--input: (
+  'hover-border-color': #1775ff,
+  'height': 32px,
+  'focus-border-color': #1775ff,
+);
+$--table: (
+  'header-bg-color': #f6f6f6,
+  'header-text-color': #888,
+  'border': 1px solid #e8e8e8,
+);
+$--transfer: (
+  'panel-header-bg-color': #fff,
+  'panel-header-height': 32px,
+);
+$--slider: (
+  'height': 4px,
+  'button-size': 10px,
+);
+$--pagination: (
+  'border-radius': 0,
+  'button-width': 26px,
+  'button-height': 26px,
+  'button-bg-color': #fff,
+  'item-gap': 12px,
+);
+$--dialog: (
+  'border-radius': 4px,
+  'title-font-size': 16px,
+  'padding-primary': 0,
+);
+// You should use them in scss, because we calculate it by sass.
+// comment next lines to use default color
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  // do not use same name, it will override.
+  $colors: $--colors,
+  $text-color: $--text-color,
+  $bg-color: $--bg-color,
+  $border-color: $--border-color,
+  $border-radius: $--border-radius,
+  $messagebox: $--messagebox,
+  $input: $--input,
+  $table: $--table,
+  $table-padding: ('default': 0),
+  $table-cell-padding: ('default': 0),
+  $transfer: $--transfer,
+  $slider: $--slider,
+  $pagination: $--pagination, // $button-padding-horizontal: ("default": 50px)
+  $dialog: $--dialog
+);
+
+@import './reset.scss';
+// if you want to import all
+// @use "element-plus/theme-chalk/src/index.scss" as *;
+
+// You can comment it to hide debug info.
+// @debug $--colors;

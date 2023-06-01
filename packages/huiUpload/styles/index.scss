@@ -1,0 +1,158 @@
+.hui-upload {
+  :deep(.hui-upload-content) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    &.hui-upload__drag {
+      font-size: 12px;
+      flex-direction: column;
+      font-weight: normal;
+      .el-upload-dragger {
+        color: $original-color;
+        .el-button {
+          color: $blue;
+          padding: 0;
+          vertical-align: baseline;
+        }
+      }
+      .el-upload__tip {
+        margin: 6px 0 0 0;
+        p {
+          margin-top: 4px;
+        }
+      }
+    }
+    &.hui-upload__drag.hui-upload__disabled {
+      :deep(.el-upload-dragger) {
+        cursor: not-allowed;
+        color: $gray-2;
+        &:hover {
+          border-color: $gray-4;
+        }
+      }
+    }
+    .el-upload {
+      &:focus {
+        color: $original-color;
+      }
+      .el-button {
+        color: $original-color;
+        font-weight: normal;
+        font-size: 12px;
+        &.is-disabled {
+          color: $gray-2;
+        }
+      }
+    }
+    .el-upload__tip {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      color: $secondary-color;
+      margin-left: 10px;
+      margin-top: 0;
+      overflow: hidden;
+      p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 16px;
+        span + span {
+          &::before {
+            content: '，';
+          }
+        }
+      }
+    }
+    .el-upload-list {
+      width: 100%;
+      margin: 12px 0 0 0;
+      li {
+        padding: 0 4px;
+        height: 22px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        line-height: 22px;
+        font-size: 14px;
+        color: #3c4658;
+        font-weight: 400;
+        margin-bottom: 10px;
+        &:hover {
+          color: $blue;
+          background: $gray-7;
+          .icon-success {
+            transform: scale(0);
+          }
+          .file-operate .delete {
+            transform: scale(1);
+          }
+        }
+        .file-name {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          margin: 0 20px 0 0;
+          overflow: hidden;
+          padding-right: 28px;
+          position: relative;
+          .el-icon {
+            margin-right: 8px;
+          }
+          & > span {
+            cursor: pointer;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+        .file-operate {
+          position: relative;
+          display: flex;
+          align-items: center;
+          .el-icon {
+            cursor: pointer;
+            margin-left: 12px;
+            transition: 0.2s transform ease;
+          }
+          .delete {
+            position: absolute;
+            right: 0;
+            transform: scale(0);
+          }
+        }
+      }
+      .el-upload-list__item {
+        &:hover {
+          .el-progress__text {
+            display: block;
+          }
+        }
+        .el-progress__text {
+          top: -14px;
+          text-align: right;
+        }
+        .el-popconfirm {
+          font-size: 12px;
+          .el-button {
+            font-weight: 400;
+            height: 22px;
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+  }
+}
+.blue {
+  color: $blue;
+}
+.green {
+  color: $green;
+}
+.gray-1 {
+  color: $gray-1;
+}

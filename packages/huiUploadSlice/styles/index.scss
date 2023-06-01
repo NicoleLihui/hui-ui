@@ -1,0 +1,157 @@
+.hui-upload {
+  :deep(.hui-upload-content) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    &.hui-upload__drag {
+      font-size: 12px;
+      flex-direction: column;
+      font-weight: normal;
+      .el-upload-dragger {
+        color: $original-color;
+        .el-button {
+          color: $blue;
+          padding: 0;
+          vertical-align: baseline;
+        }
+      }
+      .el-upload__tip {
+        margin: 6px 0 0 0;
+        p {
+          margin-top: 4px;
+        }
+      }
+    }
+    &.hui-upload__drag.hui-upload__disabled {
+      :deep(.el-upload-dragger) {
+        cursor: not-allowed;
+        color: $gray-2;
+        &:hover {
+          border-color: $gray-4;
+        }
+      }
+    }
+    .el-upload {
+      &:focus {
+        color: $original-color;
+      }
+      .el-button {
+        color: $original-color;
+        font-weight: normal;
+        font-size: 12px;
+        &.is-disabled {
+          color: $gray-2;
+        }
+      }
+    }
+    .el-upload__tip {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: $secondary-color;
+      margin-left: 10px;
+      margin-top: 0;
+      overflow: hidden;
+      p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        line-height: 16px;
+        span + span {
+          &::before {
+            content: '，';
+          }
+        }
+      }
+    }
+  }
+  .hui-upload-list {
+    width: 100%;
+    li {
+      padding: 0 4px;
+      height: 22px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      line-height: 22px;
+      font-size: 14px;
+      color: #3c4658;
+      font-weight: 400;
+      margin-bottom: 10px;
+      &:hover {
+        color: $blue;
+        background: $gray-7;
+        .file-operate .is-ready,
+        .file-operate .is-success,
+        .file-operate .is-loading {
+          transform: scale(0);
+        }
+        .file-operate .is-loading {
+          visibility: hidden;
+        }
+        .file-operate .is-remove {
+          transform: scale(1);
+        }
+      }
+      .file-name {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        margin: 0 20px 0 0;
+        overflow: hidden;
+        position: relative;
+        padding-right: 28px;
+        .el-icon {
+          margin-right: 8px;
+        }
+        & > span {
+          cursor: pointer;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      :deep(.el-progress) {
+        position: absolute;
+        top: 20px;
+        width: 100%;
+        .el-progress__text {
+          position: absolute;
+          top: -14px;
+          right: 0;
+          text-align: right;
+        }
+      }
+      .file-operate {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        .el-icon {
+          cursor: pointer;
+          margin-left: 12px;
+          transition: 0.2s transform ease;
+        }
+        .is-remove {
+          position: absolute;
+          right: 0;
+          transform: scale(0);
+        }
+        .is-loading {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+.blue {
+  color: $blue;
+}
+.green {
+  color: $green;
+}
+.gray-1 {
+  color: $gray-1;
+}
